@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 import HeaderComponent from './components/HeaderComponent';
-import FooterComponent from './components/FooterComponent';
+
 import ContentComponent from './components/ContentComponent';
 
 function App() {
@@ -32,13 +33,17 @@ function App() {
       desg:"Developer"
     }
   ];
-  return (
+  /*return (
     <div className="App">
-      <HeaderComponent name="E-Commerce"></HeaderComponent>
+      <HeaderComponent name="Employee Management System"></HeaderComponent>
       <ContentComponent employees={employeesArr}></ContentComponent>
-     <FooterComponent copyright="bapun00@gmail.com" company="mycompany.com"></FooterComponent>
+     
     </div>
-  );
+  );*/
+
+    return React.createElement("h1", {}, "Hello World!!!");
+
+
 }
 
 export default App;

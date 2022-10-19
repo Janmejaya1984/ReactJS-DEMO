@@ -1,5 +1,5 @@
 import './css/ContentComponent.css';
-
+import  FooterComponent from './FooterComponent';
 function ContentComponent(props){
 return (
     <div className="content">
@@ -13,6 +13,7 @@ return (
             )
         }
         </table>
+        <FooterComponent copyright="bapun00@gmail.com" company="mycompany.com" bgcolor='black' color='white'></FooterComponent>
        
     </div>
 );

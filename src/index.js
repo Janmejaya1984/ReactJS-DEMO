@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import ClassComponent from './ClassComponent';
+import AppWithJsx from './AppWithJsx';
+import ReactFragmentComponent from './ReactFragmentComponent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <ReactFragmentComponent/>
   </React.StrictMode>
 );
 
