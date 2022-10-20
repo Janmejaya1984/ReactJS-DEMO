@@ -1,8 +1,10 @@
 import './css/ContentComponent.css';
 import  FooterComponent from './FooterComponent';
+import SimpleAccordion from './materialComponents/SimpleAccordion';
 function ContentComponent(props){
 return (
     <div className="content">
+        <SimpleAccordion/>
         <table className="tbl">
             <tr><th>ID</th><th>Name</th><th>Dept</th><th>Desg</th></tr>
         {

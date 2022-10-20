@@ -6,10 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import ClassComponent from './ClassComponent';
 import AppWithJsx from './AppWithJsx';
 import ReactFragmentComponent from './ReactFragmentComponent';
+import TableDemo from './TableDemo';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <ReactFragmentComponent/>
+   <App/>
   </React.StrictMode>
 );
 

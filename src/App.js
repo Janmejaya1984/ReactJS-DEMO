@@ -5,7 +5,12 @@ import React from 'react';
 import HeaderComponent from './components/HeaderComponent';
 
 import ContentComponent from './components/ContentComponent';
-
+import ProductComponent from './components/ProductComponent';
+import ButtonComponent from './components/ButtonComponent';
+import Button from 'react-bootstrap/Button';
+import SimpleAccordion from './components/materialComponents/SimpleAccordion';
+import CounterCompoent from './components/CounterComponent';
+import CounterFunctionalComponent from './components/CounterFunctionalComponent';
 function App() {
   const employeesArr = [
     {
@@ -33,15 +38,52 @@ function App() {
       desg:"Developer"
     }
   ];
-  /*return (
+  const employeesArr1 = [
+    {
+      id:101,
+      name:"John",
+      dept:"IT",
+      isMarried:false
+    },
+    {
+      id:102,
+      name:"Foo",
+      dept:"Admin",
+      isMarried:false
+    },
+    {
+      id:103,
+      name:"BAR",
+      dept:"HR",
+      isMarried:false
+    },
+    {
+      id:104,
+      name:"Elle",
+      dept:"IT",
+      isMarried:false
+    }
+  ];
+  return (
     <div className="App">
-      <HeaderComponent name="Employee Management System"></HeaderComponent>
-      <ContentComponent employees={employeesArr}></ContentComponent>
-     
-    </div>
-  );*/
+    {/* <button className="button">Submit</button>
 
-    return React.createElement("h1", {}, "Hello World!!!");
+      <HeaderComponent name="Employee Management System"></HeaderComponent>
+      
+      <ButtonComponent/>
+      <ProductComponent/>
+      <ContentComponent employees={employeesArr}></ContentComponent>
+  */}
+
+<CounterFunctionalComponent/>
+<hr/>
+
+  <CounterCompoent employees={employeesArr1}/>
+  <SimpleAccordion/>
+    </div>
+  );
+
+    //return React.createElement("h1", {}, "Hello World!!!");
 
 
 }
