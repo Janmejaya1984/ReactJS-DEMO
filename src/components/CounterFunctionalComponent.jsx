@@ -3,6 +3,10 @@ import { useState } from "react";
 export default function CounterFunctionalComponent(){
     let [counter,setCounter] = useState(0);
     let [name,setName] = useState("Janmejaya");
+    let fun = ()=>{
+        console.log("------fun get called-----");
+    }
+   
     let increment = ()=>{
         setCounter(++counter);
     }

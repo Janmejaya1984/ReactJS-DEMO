@@ -2,6 +2,7 @@ import React from 'react';
 export default class CounterCompoent extends React.Component{
     constructor(props){
         super(props);
+        this.fun();
         this.state = {
             counter:0,
             employees:props.employees
@@ -24,7 +25,12 @@ export default class CounterCompoent extends React.Component{
             ]*/
         }
     }
+    fun = ()=>{
+        console.log("---------fun get called!!!");
+    }
+   
     increment = ()=>{
+
        this.setState({counter:++this.state.counter}); 
        //this.state.counter+=1;
     }
@@ -39,6 +45,8 @@ export default class CounterCompoent extends React.Component{
         this.setState({employees:arr});
      }
     render(){
+        console.log("-----rendered-----");
+        this.fun();
         return (
             <div>
                 <h1>Counter : {this.state.counter}</h1>
