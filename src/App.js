@@ -19,6 +19,8 @@ import EmployeesNew from './es6arrowfunctionalcomponent/EmployeesNew';
 import Login from './components/Login';
 import LoginClassComponent from './components/LoginClassComponent';
 import NewLogin from './components/NewLogin';
+import RefWithClassComponent from './components/RefWithClassComponent';
+import RefWithFunctionalComponent from './components/RefWithFunctionalComponent';
 function App() {
   const employeesArr = [
     {
@@ -74,8 +76,10 @@ function App() {
   ];
   return (
     <div>
-      <NewLogin/>
+      <RefWithFunctionalComponent/>
     {/* 
+    <RefWithClassComponent/>
+    <NewLogin/>
     <LoginClassComponent/>
     <Login></Login>
     <EmployeesNew/>
