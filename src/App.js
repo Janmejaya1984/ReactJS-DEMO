@@ -13,14 +13,21 @@ import CounterCompoent from './components/CounterComponent';
 import CounterFunctionalComponent from './components/CounterFunctionalComponent';
 import SetStateIsAsynchronous from './components/SetStateIsAsynchronous';
 import TimerComponent from './components/TimerComponent';
-import Employees from './components/Employees';
+//import Employees from './components/Employees';
 import TimerComponentWithProps from './components/TimerComponentWithProps';
 import EmployeesNew from './es6arrowfunctionalcomponent/EmployeesNew';
-import Login from './components/Login';
+//import Login from './components/Login';
 import LoginClassComponent from './components/LoginClassComponent';
 import NewLogin from './components/NewLogin';
 import RefWithClassComponent from './components/RefWithClassComponent';
 import RefWithFunctionalComponent from './components/RefWithFunctionalComponent';
+import EmployeeCrud from './components/RestApiCall/EmployeeCrud';
+import AddEmployee from './components/RestApiCall/AddEmployee';
+import Employees from './components/RestApiCall/Employees';
+import Login from './components/RestApiCall/React-Bootstrap/Login';
+import FormValidation from './components/RestApiCall/React-Bootstrap/FormValidation';
+
+import Header from './pages/pages-class-component/Header';
 function App() {
   const employeesArr = [
     {
@@ -76,8 +83,14 @@ function App() {
   ];
   return (
     <div>
-      <RefWithFunctionalComponent/>
+     <Header/>
     {/* 
+    <FormValidation/>
+    <Login/>
+    <Employees/> 
+    <AddEmployee/>
+    <EmployeeCrud/>
+    <RefWithClassComponent/>
     <RefWithClassComponent/>
     <NewLogin/>
     <LoginClassComponent/>

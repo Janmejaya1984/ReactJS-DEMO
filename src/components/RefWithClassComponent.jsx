@@ -9,6 +9,7 @@ class RefWithClassComponent extends React.Component {
     }
     handleLogin = (e) => {
         e.preventDefault();
+        console.log(this.pwdRef.current.value);
         if(this.nameRef.current.value==="" && this.pwdRef.current.value==="") {
             alert("Please enter username and password")
         }else if(this.nameRef.current.value===""){
@@ -32,6 +33,7 @@ class RefWithClassComponent extends React.Component {
                 </div>
                <button type="submit" className="btn btn-primary" onClick={this.handleLogin}>Login</button>
            </form>
+           <h1>UserName{this.refs.pwdRef}</h1>
         </React.Fragment>)
     }
 }

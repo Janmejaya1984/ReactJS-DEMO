@@ -1,5 +1,6 @@
 import React,{useState , useEffect} from 'react';
 import axios from 'axios';
+import "bootstrap/dist/css/bootstrap.min.css";
 function AddEmployee(){
     const[name,setName] = useState('');
     const[dept,setDept] = useState('');
@@ -8,8 +9,8 @@ function AddEmployee(){
         axios.get("http://localhost:4000/employees/").then((res)=>{
           
             setEmployees(res.data);
-        },[]);
-    });
+        });
+    },[]);
     const changeName = (e)=>{
         setName(e.target.value);
     }
@@ -21,9 +22,28 @@ function AddEmployee(){
                 let emp = {name:name,dept:dept};
                 axios.post("http://localhost:4000/employees/",emp).then((res)=>{
                     console.log(res);
+                    if(res.status==201){
+                        axios.get("http://localhost:4000/employees/").then((res)=>{
+          
+                        setEmployees(res.data);
+                    });
+                    }
+
                 });
          
     }
+    const deleteEmployee = (empId)=>{
+        
+        axios.delete("http://localhost:4000/employees/"+empId)
+        .then((res)=>{
+           axios.get("http://localhost:4000/employees/").then((res)=>{
+            if(res.status==200){
+                setEmployees(res.data);
+            }
+           });
+         } );
+    }
+
     return (<>
     <form>
         <label htmlFor='name'>Name:</label>
@@ -31,9 +51,11 @@ function AddEmployee(){
         <label htmlFor='dept'>Dept:</label>
         <input type="text" name="dept" id="dept" value={dept} onChange={changeDept}/>
         <input type="submit" value="Add Employee" onClick={add}/>
-        <table>
+    {employees.length>0?(
+        
+        <table style={{ width: "60%" }} className="table table-bordered">
             <thead>
-                <tr><th>ID</th><th>Name</th><th>Dept</th></tr>
+                <tr><th>ID</th><th>Name</th><th>Dept</th><th></th></tr>
             </thead>
             <tbody>
                 {employees.map((emp)=>{
@@ -41,12 +63,18 @@ function AddEmployee(){
                         <td>{emp.id}</td>
                         <td>{emp.name}</td>
                         <td>{emp.dept}</td>
-
+                        <td>
+                        <button onClick={()=>deleteEmployee(emp.id)}>
+                        <i className="fa fa-trash"></i>
+                        </button>
+                  </td>
                     </tr>
                 })}
             </tbody>
         </table>
-    </form>
+   
+    ):(<div><h1>No Data Found</h1></div>)}
+     </form>
     </>);
 }
 

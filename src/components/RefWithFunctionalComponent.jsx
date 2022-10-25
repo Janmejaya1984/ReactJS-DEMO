@@ -5,6 +5,10 @@ const RefWithFunctionalComponent = () => {
     const passwordRef = useRef('')
     const [success,setSuccess] = useState('')
     const [error,setError]= useState('')
+
+const showUserName = ()=>{
+    return nameRef.current.value;
+}
     const handleSubmit = (event) => {
         event.preventDefault()
         if(nameRef.current.value===""||passwordRef.current.value==="") {
@@ -47,6 +51,7 @@ const RefWithFunctionalComponent = () => {
           </button>
           {success?<div className="text-success">{success}</div>:null}
           {error?<div className="text-danger">{error}</div>:null}
+UserName:{nameRef.current}
         </form>
       </div>
     </>
