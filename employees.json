@@ -1,49 +1,24 @@
 {
+  "users":[
+    {
+        "user":"janmejaya",
+        "password":"123456"
+    },
+    {
+        "user":"John",
+        "password":"999999"
+    }
+],
   "employees": [
     {
       "name": "John",
-      "dept": "12345",
+      "dept": "HR",
       "id": 1
     },
     {
-      "name": "Janmejaya Padhiary",
-      "dept": "HR",
+      "name": "Janmejaya",
+      "dept": "IT",
       "id": 2
-    },
-    {
-      "name": "Dia Mirza",
-      "dept": "HR",
-      "id": 3
-    },
-    {
-      "name": "Foo Smith",
-      "dept": "IT",
-      "id": 4
-    },
-    {
-      "name": "Bar Smith",
-      "dept": "HR",
-      "id": 5
-    },
-    {
-      "name": "Sachin",
-      "dept": "HR",
-      "id": 6
-    },
-    {
-      "name": "Sehwag",
-      "dept": "IT",
-      "id": 7
-    },
-    {
-      "name": "Dhoni",
-      "dept": "HR",
-      "id": 8
-    },
-    {
-      "name": "Yuvraj",
-      "dept": "IT",
-      "id": 9
     }
   ]
 }

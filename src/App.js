@@ -26,8 +26,9 @@ import AddEmployee from './components/RestApiCall/AddEmployee';
 import Employees from './components/RestApiCall/Employees';
 import Login from './components/RestApiCall/React-Bootstrap/Login';
 import FormValidation from './components/RestApiCall/React-Bootstrap/FormValidation';
+import Heading from './components/Routing-Demo/Heading';
 
-import Header from './pages/pages-class-component/Header';
+//import Header from './pages/pages-class-component/Header';
 function App() {
   const employeesArr = [
     {
@@ -83,8 +84,9 @@ function App() {
   ];
   return (
     <div>
-     <Header/>
+     <Heading/>
     {/* 
+    <Header/>
     <FormValidation/>
     <Login/>
     <Employees/> 

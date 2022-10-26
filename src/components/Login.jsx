@@ -1,52 +1,53 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import {useState} from 'react';
+import {useState} from 'react'; 
+import {useSelector,useDispatch } from "react-redux";
+import {loginValidate} from "../actions/actions";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navigate } from "react-router-dom";
 const Login = () => {
-    const [username,setUserName] = useState('');
-    const [password,setPassword] = useState('');
-    const changeUserName = (e)=>{
-        setUserName(e.target.value);
+    const dispatch = useDispatch()
+    const authenticated = useSelector(state=>state.LoginReducer.isAuthed)
+    const [name,setName] = useState("")
+    const [pwd, setPwd] = useState("")   
+    const [message,setMessage] = useState("") 
+    const handleLogin = (e) => {
+        let data; 
+        e.preventDefault();
+        if((name==="") || (pwd===""))
+        { 
+            setMessage("Enter Username and Password")
+        }
+        else
+        { 
+            setMessage("")
+            data = {name:name,password:pwd}
+            dispatch(loginValidate(data))
+        }
     }
-    const changePassword = (e)=>{
-        setPassword(e.target.value);
-    }
-  return (
-    <>
-      <div className="container">
-        <form>
-          <div className="form-group">
-            <label htmlFor="name">Username:</label>
-            <input
-              style={{ width: "40%" }}
-              type="text"
-              className="form-control"
-              id="name"
-              placeholder="Enter Name"
-              name="name"
-              onChange={changeUserName}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
-            <input
-              style={{ width: "40%" }}
-              type="password"
-              className="form-control"
-              id="pwd"
-              placeholder="Enter password"
-              name="password"
-              onChange={changePassword}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-        </form>
-<div className="resultDiv">
-    <h1>UserName:{username}</h1>
-    <h1>Password:{password}</h1>
-</div>
-      </div>
-    </>
-  );
-};
+        return (<>
+                    <form onSubmit={handleLogin}>
+                        <h1>{authenticated}</h1>
+                        <br/><h2>Login</h2><br/>
+                        <div className="form-group">
+                            <label>Username:</label>
+                            <input type = "text" 
+                            style={{width:'40%'}} className="form-control" onChange={(event)=>setName(event.target.value)}
+                            placeholder = "UserName" 
+                        /><br/><br/>
+                        </div>
+                        <div className="form-group">
+                            <label>Password:</label>
+                            <input type = "password" 
+                            style={{width:'40%'}}
+                            onChange={(event)=>setPwd(event.target.value)}
+                            className="form-control"
+                            placeholder = "Password"
+                        /><br/>
+                        </div>
+                        <div className="text-danger">{message}</div>
+                        {authenticated===false ? <div className="text-danger">Invalid Credentials</div>:null}<br/>
+                        <button type="submit" className="btn btn-primary">Login</button>    
+                    </form>
+                    {authenticated===true ? <Navigate to="/counter"/> : null}
+                </>);
+}
 export default Login;

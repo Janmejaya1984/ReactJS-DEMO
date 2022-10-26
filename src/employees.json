@@ -1,4 +1,14 @@
 {
+    "users":[
+        {
+            "user":"janmejaya",
+            "password":"123456"
+        },
+        {
+            "user":"John",
+            "password":"999999"
+        }
+    ],
     "employees":[
         {
             "id":101,
